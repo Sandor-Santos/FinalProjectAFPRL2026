@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Roots of Resistance — Race, Power & the Black Studies Movement</title>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&family=Lexend+Deca:wght@300;400;500&display=swap" rel="stylesheet" />
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --paper: #f2ead8;
+    --paper-dark: #e6dbbf;
+    --ink: #1c1409;
+    --faded: #5a4e38;
+    --red: #8b1a1a;
+    --type: 'Lexend Deca', sans-serif;
+    --display: 'Lexend', sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: #c9bfa3;
+    color: var(--ink);
+    font-family: var(--type);
+    font-size: 15px;
+    line-height: 1.8;
+  }
+
+  .page {
+    max-width: 860px;
+    margin: 0 auto;
+    background: var(--paper);
+    box-shadow: 4px 4px 0 #a89880, 8px 8px 0 #9a8a72;
+    min-height: 100vh;
+  }
+
+  /* ── NAV ── */
+  nav {
+    background: var(--ink);
+    padding: 0.9rem 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 3px double var(--paper-dark);
+  }
+
+  nav .logo {
+    font-family: var(--display);
+    font-size: 1rem;
+    color: var(--paper);
+    text-decoration: none;
+    letter-spacing: 0.05em;
+  }
+
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+  }
+
+  nav ul a {
+    font-family: var(--type);
+    font-size: 0.75rem;
+    text-decoration: none;
+    color: var(--paper-dark);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  nav ul a:hover { color: #fff; text-decoration: underline; }
+
+  /* ── KENTE STRIPE ── */
+  .kente {
+    height: 9px;
+    background: repeating-linear-gradient(90deg,
+      #8b3a1e 0, #8b3a1e 18px,
+      #c4922a 18px, #c4922a 36px,
+      #2c4a2e 36px, #2c4a2e 54px,
+      #1a0f00 54px, #1a0f00 72px,
+      #c4922a 72px, #c4922a 90px,
+      #8b3a1e 90px, #8b3a1e 108px
+    );
+  }
+
+  /* ── HERO ── */
+  .hero {
+    padding: 4rem 3rem 3rem;
+    border-bottom: 2px solid var(--ink);
+  }
+
+  .hero-meta {
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--faded);
+    margin-bottom: 1.4rem;
+  }
+
+  .hero h1 {
+    font-family: var(--display);
+    font-size: clamp(2rem, 5vw, 3.4rem);
+    line-height: 1.15;
+    color: var(--ink);
+    margin-bottom: 1.2rem;
+    border-bottom: 1px double var(--ink);
+    padding-bottom: 1.2rem;
+  }
+
+  .hero h1 span { text-decoration: underline; text-decoration-thickness: 2px; }
+
+  .hero-sub {
+    font-size: 0.95rem;
+    color: var(--faded);
+    max-width: 580px;
+    line-height: 1.9;
+    font-style: italic;
+    margin-bottom: 1.8rem;
+  }
+
+  .byline {
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+    color: var(--ink);
+    border-top: 1px solid var(--faded);
+    padding-top: 0.8rem;
+    display: flex;
+    gap: 9.3rem;
+  }
+
+  .byline span { color: var(--faded); }
+
+  /* ── SECTIONS ── */
+  .section-inner {
+    padding: 3rem 3rem;
+    border-bottom: 2px solid var(--ink);
+  }
+
+  .section-heading {
+    font-family: var(--display);
+    font-size: 1.5rem;
+    margin-bottom: 0.4rem;
+    color: var(--ink);
+    letter-spacing: 0.02em;
+  }
+
+  .section-rule {
+    border: none;
+    border-top: 2px solid var(--ink);
+    margin-bottom: 1.6rem;
+  }
+
+  .bracket-label {
+    font-size: 1rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--faded);
+    margin-bottom: 0.5rem;
+  }
+
+  /* ── THESIS ── */
+  .thesis-body p {
+    font-size: 0.95rem;
+    color: var(--ink);
+    line-height: 1.9;
+    margin-bottom: 1rem;
+  }
+
+  .pull-quote {
+    border-left: 4px solid var(--ink);
+    padding: 1rem 1.5rem;
+    margin: 1.8rem 0;
+    background: var(--paper-dark);
+  }
+
+  .pull-quote p {
+    font-family: var(--display);
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: var(--ink);
+  }
+
+  /* ── TOPICS ── */
+  .topics-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    border: 2px solid var(--ink);
+    margin-top: 1.5rem;
+  }
+
+  .topic-card {
+    padding: 1.2rem 1.4rem;
+    border-right: 1px solid var(--ink);
+    border-bottom: 1px solid var(--ink);
+  }
+
+  .topic-card:nth-child(2n) { border-right: none; }
+  .topic-card:nth-child(5),
+  .topic-card:nth-child(6) { border-bottom: none; }
+
+  .topic-num {
+    font-family: var(--type);
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    color: var(--red);
+    margin-bottom: 0.4rem;
+    display: block;
+  }
+
+  .topic-card h3 {
+    font-family: var(--display);
+    font-size: 1.3rem;
+    color: var(--ink);
+    margin-bottom: 0.5rem;
+    text-decoration-thickness: 1px;
+  }
+
+  .topic-card p {
+    font-size: 0.82rem;
+    color: var(--faded);
+    line-height: 1.7;
+    margin-bottom: 0;
+  }
+
+  .topic-impact {
+    margin-top: 0.6rem;
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .topic-stat {
+    font-family: var(--display);
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--ink);
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .topic-impact-desc {
+    font-size: 0.78rem;
+    color: var(--faded);
+    line-height: 1.6;
+    margin-bottom: 0 !important;
+  }
+
+  .topic-source {
+    display: block;
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-top: 0.3rem;
+  }
+
+  /* ── DATA ── */
+  .data-intro {
+    font-size: 0.92rem;
+    color: var(--ink);
+    line-height: 1.9;
+    margin-bottom: 1.8rem;
+  }
+
+  .data-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .stat-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+
+  .stat-block {
+    border: 2px solid var(--ink);
+    padding: 1.2rem;
+    margin-bottom: 1rem;
+    background: var(--paper-dark);
+	height: 15rem;
+  }
+
+  .stat-block:last-child { margin-bottom: 0; }
+
+  .stat-num {
+    font-family: var(--display);
+    font-size: 2.4rem;
+    color: var(--ink);
+    line-height: 1;
+    margin-bottom: 0.4rem;
+  }
+
+  .stat-desc {
+    font-size: 0.8rem;
+    color: var(--faded);
+    line-height: 1.6;
+  }
+
+  .stat-src {
+    font-size: 0.68rem;
+    color: var(--faded);
+    margin-top: 0.5rem;
+    font-style: italic;
+    letter-spacing: 0.04em;
+  }
+
+  .chart-title {
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--faded);
+    margin-bottom: 1rem;
+  }
+
+  .bar-row {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .bar-label {
+    font-size: 0.78rem;
+    width: 52px;
+    flex-shrink: 0;
+    color: var(--faded);
+  }
+
+  .bar-track {
+    flex: 1;
+    height: 35px;
+    border: 1px solid var(--ink);
+    background: var(--paper);
+    position: relative;
+    overflow: visible;
+  }
+
+  .bar-fill {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 0.5rem;
+    position: relative;
+  }
+
+  .bar-white { background: var(--ink); width: 100%; }
+  .bar-black {
+    background: repeating-linear-gradient(45deg,
+      var(--ink) 0, var(--ink) 1px,
+      transparent 2px, transparent 3px);
+    width: 13%;
+    border-right: 2px solid var(--ink);
+  }
+
+  .bar-value { font-size: 0.9rem; font-weight: 400; white-space: nowrap; }
+  .bar-white .bar-value { color: var(--paper); }
+  .bar-black .bar-value { position: absolute; left: calc(100% + 8px); color: var(--ink); }
+
+  .chart-note {
+    font-size: 0.68rem;
+    color: var(--faded);
+    font-style: italic;
+    margin-top: 0.6rem;
+  }
+
+  /* ── SOURCES ── */
+  .sources-list { list-style: none; margin-top: 1.4rem; }
+
+  .sources-list li {
+    border-bottom: 1px dashed var(--faded);
+    padding: 0.9rem 0;
+    display: grid;
+    grid-template-columns: 90px 1fr;
+    gap: 1rem;
+  }
+
+  .src-type {
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--red);
+    padding-top: 0.1rem;
+  }
+
+  .src-title {
+    font-family: var(--display);
+    font-size: 0.95rem;
+    color: var(--ink);
+    line-height: 1.4;
+  }
+
+  .src-author {
+    font-size: 0.78rem;
+    color: var(--faded);
+    margin-top: 0.2rem;
+    font-style: italic;
+  }
+
+  .src-title a {
+    color: var(--ink);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
+  }
+
+  .src-title a:hover {
+    color: var(--red);
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--ink);
+    padding: 2rem 3rem;
+    text-align: center;
+  }
+
+  footer p {
+    font-family: var(--type);
+    font-size: 0.78rem;
+    color: rgba(242, 234, 216, 0.5);
+    line-height: 1.8;
+  }
+
+  footer .footer-name {
+    font-family: var(--display);
+    font-size: 1rem;
+    color: var(--paper);
+    margin-bottom: 0.3rem;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 640px) {
+    nav ul { display: none; }
+    .section-inner, .hero { padding: 2rem 1.5rem; }
+    .topics-grid { grid-template-columns: 1fr; }
+    .topic-card { border-right: none !important; }
+    .topic-card:nth-child(n) { border-bottom: 1px solid var(--ink); }
+    .topic-card:last-child { border-bottom: none; }
+    .stat-row { grid-template-columns: 1fr; }
+    .byline { flex-direction: column; gap: 0.3rem; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+<div class="kente"></div>
+
+<nav>
+  <a class="logo" href="#hero">Roots of Resistance</a>
+  <ul>
+    <li><a href="#thesis">Thesis</a></li>
+    <li><a href="#topics">Topics</a></li>
+    <li><a href="#data">Data</a></li>
+    <li><a href="#sources">Sources</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="hero" id="hero">
+  <p class="hero-meta">Africana Studies - AFPRL Spring 2026</p>
+  <h1>The Structural Roots<br/>of Racial Inequality</h1>
+  <p class="hero-sub">Mass incarceration and the racial wealth gap are not separate crises. They are interconnected outcomes of state power, economic restructuring, and centuries of deliberate racial policy.</p>
+  <div class="byline">
+    <div>Sandor Santos</div>
+    <div>Africana Studies</div>
+    <div>Race, Power &amp; Resistance</div>
+  </div>
+</div>
+
+<div class="kente"></div>
+
+<!-- THESIS -->
+<div class="section-inner" id="thesis">
+  <p class="bracket-label">[THESIS]</p>
+  <h2 class="section-heading">Black Studies as a Political Act</h2>
+  <hr class="section-rule" />
+  <div class="thesis-body">
+    <p>Stewart Fenderson argues in his article that Black Studies emerged during a period of expanding state repression and restructuring racial capitalism. The formation of Black Studies programs was not simply about representation in the academy, it was a direct response to intensifying systems of surveillance, policing, incarceration, and economic exclusion reshaping Black life in the late twentieth century.</p>
+    <p>Derecka Purnell's <em>Becoming Abolitionists</em> deepens this analysis by tracing her own political transformation and arriving at a clear conclusion: reform is insufficient. Dismantling these systems requires abolition, not adjustment of the existing structure.</p>
+    <div class="pull-quote">
+      <p>"Mass incarceration and the racial wealth gap are not separate crises. They are interconnected outcomes of state policy, economic restructuring, and racial influence in law practices -- structural inequalities, not accidental ones."</p>
+    </div>
+    <p>Data from The Sentencing Project and the Brookings Institution confirms that racial disparities in incarceration and wealth remain an ongoing issue through 2024. Understanding their historical development reveals that these inequalities are structural rather than accidental.</p>
+  </div>
+</div>
+
+<!-- TOPICS -->
+<div class="section-inner" id="topics">
+  <p class="bracket-label">[TOPICS]</p>
+  <h2 class="section-heading">Key Themes</h2>
+  <hr class="section-rule" />
+  <div class="topics-grid">
+
+    <div class="topic-card">
+      <h3>State Repression</h3>
+      <p>Federal urban policy in the 1960s funneled billions into policing Black neighborhoods under the cover of anti-poverty programs. Hinton shows that the War on Poverty became, in practice, a war on Black communities: expanding surveillance and criminalization rather than opportunity.</p>
+      <div class="topic-impact">
+        <div class="topic-stat">$2.3B</div>
+        <p class="topic-impact-desc">Authorized by the Demonstration Cities Act of 1966, framed as urban aid, but redirected toward policing and "control" of racially marginalized communities.</p>
+        <span class="topic-source">- Hinton, A War within Our Own Boundaries</span>
+      </div>
+    </div>
+
+    <div class="topic-card">
+      <h3>Mass Incarceration</h3>
+      <p>Angela Davis argues that prisons function not as crime deterrents but as warehouses for people discarded by the economy. The numbers bear this out: the U.S. prison population grew nearly 700% between 1972 and its 2009 peak, driven by policy choices, not crime rates.</p>
+      <div class="topic-impact">
+        <div class="topic-stat">5x</div>
+        <p class="topic-impact-desc">Black Americans are incarcerated at five times the rate of white Americans. Black Americans make up 38% of the prison population despite being 13% of the U.S. population.</p>
+        <span class="topic-source">- The Sentencing Project, 2024</span>
+      </div>
+    </div>
+
+    <div class="topic-card">
+      <h3>Racial Capitalism</h3>
+      <p>The Black-white wealth gap is not a product of individual choices, it is the direct result of redlining, exclusion from the GI Bill, discriminatory appraisals, and labor market barriers sustained over generations. Fenderson ties these economic structures directly to the rise of Black Studies as a field.</p>
+      <div class="topic-impact">
+        <div class="topic-stat">$240,120</div>
+        <p class="topic-impact-desc">The median wealth difference between white and Black households as of 2022, up $49,950 in just three years. Only 44% of Black Americans own homes vs. 73% of white Americans.</p>
+        <span class="topic-source">- Brookings Institution, 2024</span>
+      </div>
+    </div>
+
+    <div class="topic-card">
+      <h3>The Case for Abolition</h3>
+      <p>Purnell's <em>Becoming Abolitionists</em> traces her own shift from reform to abolition. Each attempted reform: body cameras, implicit bias training, consent decrees left the structure intact. The data on life sentences shows why: Black Americans make up 55% of those serving life without parole.</p>
+      <div class="topic-impact">
+        <div class="topic-stat">55%</div>
+        <p class="topic-impact-desc">Of people serving life without the possibility of parole are Black, the most extreme end of a system Purnell argues cannot be reformed from within.</p>
+        <span class="topic-source">- The Sentencing Project; Purnell, Becoming Abolitionists</span>
+      </div>
+    </div>
+
+    <div class="topic-card">
+      <h3>Black Education &amp; Resistance</h3>
+      <p>Before, during, and after Reconstruction, Black communities built their own schools at enormous personal cost: paying tuition, donating labor, and pooling meager resources. Because access to education was inseparable from the meaning of freedom itself.</p>
+      <div class="topic-impact">
+        <div class="topic-stat">5,000+ Schools Built</div>
+        <p class="topic-impact-desc">Rosenwald built schools across the South between 1912 and 1932, funded largely by Black community contributions, a direct response to the failure of public institutions to educate Black children.</p>
+        <span class="topic-source">- JSTOR Daily, How Black Communities Built Their Own Schools</span>
+      </div>
+    </div>
+
+    <div class="topic-card">
+      <h3>Historical Continuity</h3>
+      <p>From the rollback of Reconstruction to the War on Drugs to modern mandatory minimums, each era has produced new mechanisms for the same outcome. One in five Black men born in 2001 is projected to be imprisoned in his lifetime. Down from one in three, but still a structural crisis.</p>
+      <div class="topic-impact">
+        <div class="topic-stat">1 in 5 Imprisoned</div>
+        <p class="topic-impact-desc">A fifth of Black men born in 2001 are projected to be imprisoned in their lifetime. For those born in 1981, it was 1 in 3. Progress exists, but the discrimination remains underlying and systematic.</p>
+        <span class="topic-source">- The Sentencing Project, One in Five Series</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- DATA -->
+<div class="section-inner" id="data">
+  <p class="bracket-label">[DATA]</p>
+  <h2 class="section-heading">The Evidence of Structural Inequality</h2>
+  <hr class="section-rule" />
+  <p class="data-intro">Data from the Brookings Institution and The Sentencing Project confirms that racial disparities in incarceration and wealth remain severe through 2024. These are not isolated statistics -- they reflect the compounding effects of deliberate policy over generations.</p>
+
+  <div class="data-grid">
+    <div>
+      <p class="chart-title">Median Household Net Worth</p>
+      <div class="bar-row">
+        <span class="bar-label">White</span>
+        <div class="bar-track">
+          <div class="bar-fill bar-white"><span class="bar-value">~$188,200</span></div>
+        </div>
+      </div>
+      <div class="bar-row">
+        <span class="bar-label">Black</span>
+        <div class="bar-track">
+          <div class="bar-fill bar-black"><span class="bar-value">~$24,100</span></div>
+        </div>
+      </div>
+      <p class="chart-note">Source: Brookings Institution. Approximate median net worth figures.</p>
+    </div>
+
+    <div class="stat-row">
+      <div class="stat-block">
+        <div class="stat-num">5x</div>
+        <div class="stat-desc">Black Americans are incarcerated at approximately five times the rate of white Americans.</div>
+        <div class="stat-src">-- The Sentencing Project, 2024</div>
+      </div>
+      <div class="stat-block">
+        <div class="stat-num">38%</div>
+        <div class="stat-desc">Of the U.S. prison population is Black despite representing approximately 13% of the general population.</div>
+        <div class="stat-src">-- The Sentencing Project, 2024</div>
+      </div>
+      <div class="stat-block">
+        <div class="stat-num">7.8x</div>
+        <div class="stat-desc">The median wealth gap between white and Black households, driven by housing discrimination, credit exclusion, and labor market inequality.</div>
+        <div class="stat-src">-- Brookings Institution</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SOURCES -->
+<div class="section-inner" id="sources">
+  <p class="bracket-label">[SOURCES]</p>
+  <h2 class="section-heading">Bibliography</h2>
+  <hr class="section-rule" />
+  <ul class="sources-list">
+    <li>
+      <span class="src-type">Article</span>
+      <div>
+        <p class="src-title"><a href="https://www.jstor.org/stable/43525472" target="_blank" rel="noopener">Expanding the History of the Black Studies Movement:</a></p>
+        <p class="src-author">Stewart Fenderson</p>
+      </div>
+    </li>
+    <li>
+      <span class="src-type">Book</span>
+      <div>
+        <p class="src-title"><a href="https://brightspace.cuny.edu/d2l/le/content/1125008/viewContent/39340327/View" target="_blank" rel="noopener">Becoming Abolitionists: Police, Protests, and the Pursuit of Freedom</a></p>
+        <p class="src-author">Derecka Purnell</p>
+      </div>
+    </li>
+    <li>
+      <span class="src-type">Book</span>
+      <div>
+        <p class="src-title"><a href="https://decolonisesociology.com/wp-content/uploads/2019/03/angela-davis-are_prisons_obsolete.pdf" target="_blank" rel="noopener">Are Prisons Obsolete?</a></p>
+        <p class="src-author">Angela Y. Davis</p>
+      </div>
+    </li>
+    <li>
+      <span class="src-type">Research</span>
+      <div>
+        <p class="src-title"><a href="https://lsa.umich.edu/content/dam/sid-assets/SID%20Docs/Hinton,%20_A%20War%20Within%20Our%20Own%20Boundaries_.pdf" target="_blank" rel="noopener">A War within Our Own Boundaries</a></p>
+        <p class="src-author">Elizabeth Hinton</p>
+      </div>
+    </li>
+    <li>
+      <span class="src-type">Data</span>
+      <div>
+        <p class="src-title"><a href="https://www.sentencingproject.org/issues/racial-justice/" target="_blank" rel="noopener">Racial Disparities in the U.S. Criminal Justice System</a></p>
+        <p class="src-author">The Sentencing Project, 2024</p>
+      </div>
+    </li>
+    <li>
+      <span class="src-type">Data</span>
+      <div>
+        <p class="src-title"><a href="https://www.brookings.edu/articles/examining-the-black-white-wealth-gap/" target="_blank" rel="noopener">Examining the Black-White Wealth Gap</a></p>
+        <p class="src-author">Brookings Institution</p>
+      </div>
+    </li>
+    <li>
+      <span class="src-type">Journal</span>
+      <div>
+        <p class="src-title"><a href="https://daily.jstor.org/how-black-communities-built-their-own-schools/" target="_blank" rel="noopener">How Black Communities Built Their Own Schools</a></p>
+        <p class="src-author">JSTOR Daily</p>
+      </div>
+    </li>
+  </ul>
+</div>
+
+<div class="kente"></div>
+
+<footer>
+  <p class="footer-name">Sandor Santos</p>
+  <p>Africana Studies - Hunter College<br/>Roots of Resistance: Race, Power &amp; the Black Studies Movement</p>
+</footer>
+
+</div>
+</body>
+</html>
